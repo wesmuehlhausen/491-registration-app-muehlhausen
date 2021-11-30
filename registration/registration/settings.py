@@ -76,7 +76,7 @@ WSGI_APPLICATION = 'registration.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': BASE_DIR / 'registration',
+        'NAME': 'registration',
         'USER': 'regapp', 
         'PASSWORD': 'wes', 
         'HOST': 'localhost',
