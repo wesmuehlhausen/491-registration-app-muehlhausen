@@ -1,4 +1,8 @@
 from django.test import TestCase, Client
+
+#from registration.regserve.serializers import StudentSerializer
+#from .serializers import *
+
 from .models import *
 import io
 from rest_framework.parsers import JSONParser
@@ -42,6 +46,7 @@ class DataTest(TestCase):
         print(f'\nTEST_STUDENT_API: student object from DB is: {first_student_db}')
 
         first_student_serializer = StudentSerializer(first_student_db , data=first_student_data)
+        #first_student_serializer = StudentSerializer.create_student(first_student_db , first_student_data)
         print(f'\nTEST_STUDENT_API: respones serializer: {first_student_serializer}')
         print(f'\nTEST_STUDENT_API: respones serializer validity is: {first_student_serializer.is_valid()}')
         print(f'\nTEST_STUDENT_API: respones serializer valid data: {first_student_serializer.validated_data}')
