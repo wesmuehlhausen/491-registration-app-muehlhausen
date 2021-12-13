@@ -1,6 +1,6 @@
 from django.test import TestCase, Client
 
-#from registration.regserve.serializers import StudentSerializer
+from .serializers import StudentSerializer
 #from .serializers import *
 
 from .models import *

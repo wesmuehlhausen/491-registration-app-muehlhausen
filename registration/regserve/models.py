@@ -1,6 +1,7 @@
 from django.db import models
 from django.core import validators
 from django.core.validators import MinLengthValidator, MaxLengthValidator
+from django.urls import reverse, reverse_lazy
 
 class Person(models.Model):
     firstname = models.CharField(max_length=50)
@@ -46,6 +47,7 @@ class Student(Person):
     def __str__(self):
         return f'Student ID: {self.id}: {super(Student, self).__str__()} - year in school {self.schoolyear}, major: {self.major}, gpa: {self.gpa}'
 
-
+    def get_absolute_url(self):
+        return reverse_lazy('regserve:students')
 
 # Create your models here.
