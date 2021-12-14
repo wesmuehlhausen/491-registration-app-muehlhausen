@@ -28,48 +28,22 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-# Logging https://docs.djangoproject.com/en/4.0/topics/logging/
+# https://docs.djangoproject.com/en/4.0/topics/logging/
 
-# LOGGING = {
-#     'version': 1,
-#     'disable_existing_loggers': False,
-#     'handlers': {
-#         'console': {
-#             'level': 'INFO', 
-#             'class': 'logging.StreamHandler',
-#         },
-#         'file': {
-#             'level': 'INFO', 
-#             'class': 'logging.FileHandler',
-#             'filename': 'logs/runserver.log',
-#         }
-#     },
-#     'root': {
-#         'handlers': ['file'],
-#         'level': 'INFO'
-#     },
-#     'loggers': {
-#         'django.server': {
-#             'handlers': ['file'],
-#             'level': 'INFO',
-#             'propagate': True,
-#         }
-#     },
-# }
 
-# LOGGING = {
-#     'version': 1,
-#     'disable_existing_loggers': False,
-#     'handlers': {
-#         'console': {
-#             'class': 'logging.StreamHandler',
-#         },
-#     },
-#     'root': {
-#         'handlers': ['console'],
-#         'level': 'WARNING',
-#     },
-# }
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'WARNING',
+    },
+}
 
 # Application definition
 

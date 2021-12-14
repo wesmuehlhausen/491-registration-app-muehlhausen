@@ -1,0 +1,1 @@
+Logging info is printed in Terminal

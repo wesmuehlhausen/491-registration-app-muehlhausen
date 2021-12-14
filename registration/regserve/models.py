@@ -3,7 +3,11 @@ from django.core import validators
 from django.core.validators import MinLengthValidator, MaxLengthValidator
 from django.urls import reverse, reverse_lazy
 
+
+#Create a model for each student and the data we have on them
 class Person(models.Model):
+
+    #Data we have on student
     firstname = models.CharField(max_length=50)
     lastname = models.CharField(max_length=50)
     idnumber = models.PositiveIntegerField()
@@ -11,6 +15,7 @@ class Person(models.Model):
     datecreated = models.DateTimeField(blank=True, auto_now_add=True)
     datemodified = models.DateTimeField(blank=True, auto_now=True)
 
+    #Helper to return full name
     @property
     def full_name(self):
         return f'{self.firstname} {self.lastname}'
@@ -18,10 +23,14 @@ class Person(models.Model):
     class Meta: 
         abstract = True
 
+    #Get all values in string
     def __str__(self):
         return f'Person ID: {self.id}: name: {self.full_name}, student id: {self.idnumber}, email: {self.email}, Created: {self.datecreated}, Modified: {self.datemodified}'
 
+#Student Class
 class Student(Person):
+
+    #Values for year in school
     YEAR_IN_SCHOOL = [
         ('FR', 'Freshman'),
         ('SO', 'Sophomore'),
@@ -30,6 +39,7 @@ class Student(Person):
         ('GR', 'Graduate'),
     ]
 
+    #Values for different majors
     MAJORS = [
         ('CS', 'Computer Science'),
         ('ENG', 'Engineering'),
@@ -50,4 +60,3 @@ class Student(Person):
     def get_absolute_url(self):
         return reverse_lazy('regserve:students')
 
-# Create your models here.

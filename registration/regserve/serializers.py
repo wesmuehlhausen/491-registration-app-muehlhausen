@@ -1,10 +1,7 @@
 from rest_framework import serializers
-# from rest_framework.serializers import serializers
 from .models import *
 
-# DONT DO THIS pip install python-rest-framework
-# DO THIS pip install dejangorestframework
-
+#Class for student serializer. Includes student fields and other fields
 class StudentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Student

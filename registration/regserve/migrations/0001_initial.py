@@ -10,6 +10,7 @@ class Migration(migrations.Migration):
     dependencies = [
     ]
 
+    #Defining fields
     operations = [
         migrations.CreateModel(
             name='Student',
