@@ -50,7 +50,7 @@ class DataTest(TestCase):
         print(f'\nTEST_STUDENT_API: api response object is : {first_student_api}')
         self.assertEqual(first_student_db, first_student_api)
 
-    #Method for testing it
+    #Method for testing it all done
     def test_student(self): 
         student_list = Student.objects.all()
         student = student_list[0]
